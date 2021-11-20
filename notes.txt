@@ -1,0 +1,245 @@
+there two ways of creating one is array and the other one is using linux list_head
+since there is an array we have the limit and we can code like
+struct message messages[800] with the max of messages of 800
+
+
+
+Type  : bool
+Defined at lib/Kconfig.debug:268
+  Prompt: Generate BTF typeinfo
+  Depends on: DEBUG_INFO [=y] && !DEBUG_INFO_SPLIT [=n] && !DEBUG_INFO_REDUCED [=n] && (!GCC_PLUGIN_RANDSTRUCT [=n] || COMPILE_TEST [=n])
+  Location:
+    -> Kernel hacking
+      -> Compile-time checks and compiler options
+        -> Compile the kernel with debug info (DEBUG_INFO [=y])
+
+
+
+  Generate BTF typeinfo (DEBUG_INFO_BTF) [N/y/?] (NEW) y                   
+  Provide GDB scripts for kernel debugging (GDB_SCRIPTS) [Y/n/?] y
+Warn for stack frames larger than (FRAME_WARN) [1024] 1024
+Strip assembler-generated symbols during link (STRIP_ASM_SYMS) [N/y/?] n
+Generate readable assembler code (READABLE_ASM) [N/y/?] n
+Install uapi headers to usr/include (HEADERS_INSTALL) [N/y/?] n
+Enable full Section mismatch analysis (DEBUG_SECTION_MISMATCH) [N/y/?] n
+Make section mismatch errors non-fatal (SECTION_MISMATCH_WARN_ONLY) [Y/n/?] y
+Force all function address 32B aligned (DEBUG_FORCE_FUNCTION_ALIGN_32B) [N/y/?] n
+Compile-time stack metadata validation (STACK_VALIDATION) [Y/?] y
+Force weak per-cpu definitions (DEBUG_FORCE_WEAK_PER_CPU) [N/y/?] n
+
+*** Error during writing of the configuration.
+
+make[1]: *** [scripts/kconfig/Makefile:71: oldconfig] Error 1
+make: *** [Makefile:629: oldconfig] Error 2
+kai@kai-VirtualBox:/usr/src/linux-headers-5.11.0-38-generic$ sudo make oldconfig && make prepare
+#
+# No change to .config
+#
+mkdir: cannot create directory ‘.tmp_10199’: Permission denied
+mkdir: cannot create directory ‘.tmp_10201’: Permission denied
+mkdir: cannot create directory ‘.tmp_10203’: Permission denied
+mkdir: cannot create directory ‘.tmp_10205’: Permission denied
+mkdir: cannot create directory ‘.tmp_10207’: Permission denied
+mkdir: cannot create directory ‘.tmp_10209’: Permission denied
+mkdir: cannot create directory ‘.tmp_10212’: Permission denied
+mkdir: cannot create directory ‘.tmp_10214’: Permission denied
+mkdir: cannot create directory ‘.tmp_10216’: Permission denied
+mkdir: cannot create directory ‘.tmp_10218’: Permission denied
+mkdir: cannot create directory ‘.tmp_10220’: Permission denied
+mkdir: cannot create directory ‘.tmp_10222’: Permission denied
+mkdir: cannot create directory ‘.tmp_10224’: Permission denied
+mkdir: cannot create directory ‘.tmp_10226’: Permission denied
+mkdir: cannot create directory ‘.tmp_10228’: Permission denied
+mkdir: cannot create directory ‘.tmp_10230’: Permission denied
+mkdir: cannot create directory ‘.tmp_10232’: Permission denied
+mkdir: cannot create directory ‘.tmp_10234’: Permission denied
+mkdir: cannot create directory ‘.tmp_10236’: Permission denied
+mkdir: cannot create directory ‘.tmp_10238’: Permission denied
+mkdir: cannot create directory ‘.tmp_10240’: Permission denied
+arch/x86/Makefile:140: CONFIG_X86_X32 enabled but no binutils support
+mkdir: cannot create directory ‘.tmp_10242’: Permission denied
+mkdir: cannot create directory ‘.tmp_10244’: Permission denied
+mkdir: cannot create directory ‘.tmp_10249’: Permission denied
+mkdir: cannot create directory ‘.tmp_10251’: Permission denied
+mkdir: cannot create directory ‘.tmp_10253’: Permission denied
+mkdir: cannot create directory ‘.tmp_10255’: Permission denied
+mkdir: cannot create directory ‘.tmp_10257’: Permission denied
+mkdir: cannot create directory ‘.tmp_10259’: Permission denied
+mkdir: cannot create directory ‘.tmp_10261’: Permission denied
+mkdir: cannot create directory ‘.tmp_10263’: Permission denied
+mkdir: cannot create directory ‘.tmp_10265’: Permission denied
+mkdir: cannot create directory ‘.tmp_10267’: Permission denied
+mkdir: cannot create directory ‘.tmp_10269’: Permission denied
+mkdir: cannot create directory ‘.tmp_10272’: Permission denied
+mkdir: cannot create directory ‘.tmp_10274’: Permission denied
+mkdir: cannot create directory ‘.tmp_10277’: Permission denied
+mkdir: cannot create directory ‘.tmp_10279’: Permission denied
+mkdir: cannot create directory ‘.tmp_10281’: Permission denied
+mkdir: cannot create directory ‘.tmp_10283’: Permission denied
+mkdir: cannot create directory ‘.tmp_10285’: Permission denied
+mkdir: cannot create directory ‘.tmp_10287’: Permission denied
+mkdir: cannot create directory ‘.tmp_10289’: Permission denied
+mkdir: cannot create directory ‘.tmp_10291’: Permission denied
+mkdir: cannot create directory ‘.tmp_10293’: Permission denied
+mkdir: cannot create directory ‘.tmp_10295’: Permission denied
+mkdir: cannot create directory ‘.tmp_10297’: Permission denied
+mkdir: cannot create directory ‘.tmp_10301’: Permission denied
+  SYNC    include/config/auto.conf.cmd
+mkdir: cannot create directory ‘.tmp_10325’: Permission denied
+mkdir: cannot create directory ‘.tmp_10327’: Permission denied
+mkdir: cannot create directory ‘.tmp_10329’: Permission denied
+mkdir: cannot create directory ‘.tmp_10331’: Permission denied
+mkdir: cannot create directory ‘.tmp_10333’: Permission denied
+mkdir: cannot create directory ‘.tmp_10335’: Permission denied
+mkdir: cannot create directory ‘.tmp_10337’: Permission denied
+mkdir: cannot create directory ‘.tmp_10339’: Permission denied
+mkdir: cannot create directory ‘.tmp_10341’: Permission denied
+mkdir: cannot create directory ‘.tmp_10343’: Permission denied
+mkdir: cannot create directory ‘.tmp_10345’: Permission denied
+mkdir: cannot create directory ‘.tmp_10347’: Permission denied
+mkdir: cannot create directory ‘.tmp_10349’: Permission denied
+*
+* Restart config...
+*
+*
+* Compile-time checks and compiler options
+*
+Compile the kernel with debug info (DEBUG_INFO) [Y/n/?] y
+  Reduce debugging information (DEBUG_INFO_REDUCED) [N/y/?] n
+  Generate BTF typeinfo (DEBUG_INFO_BTF) [N/y/?] (NEW) y
+  Provide GDB scripts for kernel debugging (GDB_SCRIPTS) [Y/n/?] y
+Warn for stack frames larger than (FRAME_WARN) [1024] 1024
+Strip assembler-generated symbols during link (STRIP_ASM_SYMS) [N/y/?] n
+Generate readable assembler code (READABLE_ASM) [N/y/?] n
+Install uapi headers to usr/include (HEADERS_INSTALL) [N/y/?] n
+Enable full Section mismatch analysis (DEBUG_SECTION_MISMATCH) [N/y/?] n
+Make section mismatch errors non-fatal (SECTION_MISMATCH_WARN_ONLY) [Y/n/?] y
+Force all function address 32B aligned (DEBUG_FORCE_FUNCTION_ALIGN_32B) [N/y/?] n
+Compile-time stack metadata validation (STACK_VALIDATION) [Y/?] y
+Force weak per-cpu definitions (DEBUG_FORCE_WEAK_PER_CPU) [N/y/?] n
+
+*** Error during writing of the configuration.
+
+make[2]: *** [scripts/kconfig/Makefile:71: syncconfig] Error 1
+make[1]: *** [Makefile:629: syncconfig] Error 2
+make: *** [Makefile:738: include/config/auto.conf.cmd] Error 2
+kai@kai-VirtualBox:/usr/src/linux-headers-5.11.0-38-generic$ sudo make oldconfi
+  SYNC    include/config/auto.conf.cmd
+make: *** No rule to make target 'oldconfi'. Stop.
+kai@kai-VirtualBox:/usr/src/linux-headers-5.11.0-38-generic$ sudo make oldconfig
+#
+# No change to .config
+#
+kai@kai-VirtualBox:/usr/src/linux-headers-5.11.0-38-generic$ sudo make prepare
+make[1]: *** No rule to make target 'arch/x86/tools/relocs_32.c', needed by 'arch/x86/tools/relocs_32.o'. Stop.
+make: *** [arch/x86/Makefile:211: archscripts] Error 2
+kai@kai-VirtualBox:/usr/src/linux-headers-5.11.0-38-generic$ -su
+
+Command '-su' not found, did you mean:
+
+  command 'ksu' from deb krb5-user (1.17-6ubuntu4.1)
+  command 'ksu' from deb heimdal-clients (7.7.0+dfsg-1ubuntu1)
+  command 'su' from deb util-linux (2.34-0.1ubuntu9.1)
+
+Try: sudo apt install <deb name>
+
+kai@kai-VirtualBox:/usr/src/linux-headers-5.11.0-38-generic$ make oldconfig && make prepare
+mkdir: cannot create directory ‘.tmp_12612’: Permission denied
+mkdir: cannot create directory ‘.tmp_12614’: Permission denied
+mkdir: cannot create directory ‘.tmp_12616’: Permission denied
+mkdir: cannot create directory ‘.tmp_12618’: Permission denied
+mkdir: cannot create directory ‘.tmp_12620’: Permission denied
+mkdir: cannot create directory ‘.tmp_12622’: Permission denied
+mkdir: cannot create directory ‘.tmp_12624’: Permission denied
+mkdir: cannot create directory ‘.tmp_12626’: Permission denied
+mkdir: cannot create directory ‘.tmp_12628’: Permission denied
+mkdir: cannot create directory ‘.tmp_12630’: Permission denied
+mkdir: cannot create directory ‘.tmp_12632’: Permission denied
+mkdir: cannot create directory ‘.tmp_12634’: Permission denied
+mkdir: cannot create directory ‘.tmp_12636’: Permission denied
+*
+* Restart config...
+*
+*
+* Compile-time checks and compiler options
+*
+Compile the kernel with debug info (DEBUG_INFO) [Y/n/?] y
+  Reduce debugging information (DEBUG_INFO_REDUCED) [N/y/?] n
+  Generate BTF typeinfo (DEBUG_INFO_BTF) [N/y/?] (NEW) y
+  Provide GDB scripts for kernel debugging (GDB_SCRIPTS) [Y/n/?] y
+Warn for stack frames larger than (FRAME_WARN) [1024] 1024
+Strip assembler-generated symbols during link (STRIP_ASM_SYMS) [N/y/?] n
+Generate readable assembler code (READABLE_ASM) [N/y/?] n
+Install uapi headers to usr/include (HEADERS_INSTALL) [N/y/?] n
+Enable full Section mismatch analysis (DEBUG_SECTION_MISMATCH) [N/y/?] n
+Make section mismatch errors non-fatal (SECTION_MISMATCH_WARN_ONLY) [Y/n/?] y
+Force all function address 32B aligned (DEBUG_FORCE_FUNCTION_ALIGN_32B) [N/y/?] n
+Compile-time stack metadata validation (STACK_VALIDATION) [Y/?] y
+Force weak per-cpu definitions (DEBUG_FORCE_WEAK_PER_CPU) [N/y/?] n
+
+*** Error during writing of the configuration.
+
+make[1]: *** [scripts/kconfig/Makefile:71: oldconfig] Error 1
+make: *** [Makefile:629: oldconfig] Error 2
+kai@kai-VirtualBox:/usr/src/linux-headers-5.11.0-38-generic$ cd ..
+kai@kai-VirtualBox:/usr/src$ cd linux-h
+linux-headers-5.11.0-38-generic/  linux-headers-5.4.0-42-generic/
+linux-headers-5.4.0-42/           linux-hwe-5.11-headers-5.11.0-38/
+kai@kai-VirtualBox:/usr/src$ cd linux-headers-5.4.0-42-generic/
+kai@kai-VirtualBox:/usr/src/linux-headers-5.4.0-42-generic$ make oldconfig && make prepare
+  HOSTCC  scripts/basic/fixdep
+scripts/basic/fixdep.c:410:1: fatal error: opening dependency file scripts/basic/.fixdep.d: Permission denied
+  410 | }
+      | ^
+compilation terminated.
+make[1]: *** [scripts/Makefile.host:107: scripts/basic/fixdep] Error 1
+make: *** [Makefile:527: scripts_basic] Error 2
+kai@kai-VirtualBox:/usr/src/linux-headers-5.4.0-42-generic$ sudo make oldconfig && make prepare
+  HOSTCC  scripts/basic/fixdep
+  HOSTCC  scripts/kconfig/conf.o
+  HOSTCC  scripts/kconfig/confdata.o
+  HOSTCC  scripts/kconfig/expr.o
+  LEX     scripts/kconfig/lexer.lex.c
+  YACC    scripts/kconfig/parser.tab.[ch]
+  HOSTCC  scripts/kconfig/lexer.lex.o
+  HOSTCC  scripts/kconfig/parser.tab.o
+  HOSTCC  scripts/kconfig/preprocess.o
+  HOSTCC  scripts/kconfig/symbol.o
+  HOSTLD  scripts/kconfig/conf
+scripts/kconfig/conf  --oldconfig Kconfig
+#
+# configuration written to .config
+#
+arch/x86/Makefile:147: CONFIG_X86_X32 enabled but no binutils support
+scripts/kconfig/conf  --syncconfig Kconfig
+
+*** Error during writing of the configuration.
+
+make[2]: *** [scripts/kconfig/Makefile:73: syncconfig] Error 1
+make[1]: *** [Makefile:594: syncconfig] Error 2
+make: *** [Makefile:704: include/config/auto.conf.cmd] Error 2
+make: *** [include/config/auto.conf.cmd] Deleting file 'include/config/tristate.conf'
+make: unlink: include/config/tristate.conf: Permission denied
+kai@kai-VirtualBox:/usr/src/linux-headers-5.4.0-42-generic$  make oldconfig && make prepare
+scripts/kconfig/conf  --oldconfig Kconfig
+
+*** Error during writing of the configuration.
+
+make[1]: *** [scripts/kconfig/Makefile:73: oldconfig] Error 1
+make: *** [Makefile:594: oldconfig] Error 2
+kai@kai-VirtualBox:/usr/src/linux-headers-5.4.0-42-generic$ sudo make oldconfig && make prepare
+scripts/kconfig/conf  --oldconfig Kconfig
+#
+# No change to .config
+#
+arch/x86/Makefile:147: CONFIG_X86_X32 enabled but no binutils support
+scripts/kconfig/conf  --syncconfig Kconfig
+
+*** Error during writing of the configuration.
+
+make[2]: *** [scripts/kconfig/Makefile:73: syncconfig] Error 1
+make[1]: *** [Makefile:594: syncconfig] Error 2
+make: *** [Makefile:704: include/config/auto.conf.cmd] Error 2
+make: *** [include/config/auto.conf.cmd] Deleting file 'include/config/tristate.conf'
+make: unlink: include/config/tristate.conf: Permission denied
+
