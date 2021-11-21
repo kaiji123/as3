@@ -1,0 +1,24 @@
+	//printk(KERN_INFO "read, %s", tailnode->s);
+   // printk(KERN_INFO "read %s", node->s);
+    //tail = &(node->list).prev;
+
+ //////////////////////////
+
+    	
+	//node = list_last_entry(&head, struct Message, list);
+	//node = container_of(tail , struct Message, list);
+
+
+
+//printk(KERN_INFO "next read %s", node->s);
+/*
+
+    temptail = (tail)->prev;
+    list_del(tail);
+    tail = temptail;
+    tailnode = container_of(tail, struct Message,list);
+    printk(KERN_INFO "pre read %s", tailnode->s);*/
+
+
+//node = container_of(tail, struct Message, list);
+
